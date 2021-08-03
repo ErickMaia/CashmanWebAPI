@@ -6,7 +6,7 @@ namespace Cashman.BLL.Entities
 {
     public class Movement : Entity
     {
-        public Movement(EnumMovementType type, string description, string notes, double amount, DateTime dateTime, bool done, int ID) : base(ID)
+        public Movement(int id, EnumMovementType type, string description, string notes, double amount, DateTime dateTime, bool done) : base(id)
         {
             Type = type;
             Description = description;
@@ -14,7 +14,7 @@ namespace Cashman.BLL.Entities
             Amount = amount;
             DateTime = dateTime;
             Done = done;
-        }
+        }  
 
         public EnumMovementType Type { get; set; }
         public string Description { get; set; }

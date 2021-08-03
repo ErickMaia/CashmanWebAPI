@@ -35,9 +35,6 @@ namespace Cashman.BLL.Services
         public Movement GetById(int id)
         {
             var movement = _movementRepository.GetById(id); 
-            if(movement is null){
-                Notify("There is no movement record matching the ID informed. "); 
-            }
             return movement; 
         }
         public bool Update(Movement entity)
@@ -61,7 +58,7 @@ namespace Cashman.BLL.Services
                 Notify("There is no movement record matching the ID informed."); 
                 return false; 
             }
-            if(_movementRepository.Remove(id)){
+            if(!_movementRepository.Remove(id)){
                 Notify("A problem ocurred when trying to delete the movement record. "); 
                 return false; 
             }
