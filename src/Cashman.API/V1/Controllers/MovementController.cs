@@ -69,7 +69,7 @@ namespace Cashman.API.V1.Controllers
             return Ok(); 
         }
 
-        public ActionResult ReturnErrors()
+        private ActionResult ReturnErrors()
         {
             return BadRequest(
                         new

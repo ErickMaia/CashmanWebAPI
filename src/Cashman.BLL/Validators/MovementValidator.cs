@@ -13,6 +13,7 @@ namespace Cashman.BLL.Validators
             RuleFor(x => x.Amount).NotNull().WithMessage("The amount must not be null. "); 
             RuleFor(x => x.Amount).GreaterThan(0).WithMessage("The amount must be greater than zero. "); 
             
+            RuleFor(x => x.Type).NotNull().WithMessage("The movement type must not be null. "); 
             RuleFor(x => x.Type).IsInEnum<Movement, EnumMovementType>().WithMessage("Invalid movement type informed. "); 
 
         }
